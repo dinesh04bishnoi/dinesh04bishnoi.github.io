@@ -26,12 +26,12 @@ function SubmitForm() {
     }
     //Email Validations
     var em = document.getElementById("email").value;
-    var exp = /^([a-zA-Z0-9\.-]+).([a-z]{2,20})$/;
+    var exp = /^([a-zA-Z0-9\.-]+)@([a-z]{2,20})$/;
     if (em == "") {
         document.getElementById("mail").innerHTML = "Please fill Email id";
         status = false;
     }
-    if (exp) {
+    if (!em.match(exp)) {
         document.getElementById("mail").innerHTML = "Please fill valid email id";
         status = false;
     }
