@@ -20,4 +20,5 @@ skills.forEach((element,index) => {
     var html=`${index+1}:- You got :- ${element.skillName} in your skills with rating ${element.Rating}<br>`;
     document.getElementById("result7").innerHTML+=html;
 });
-document.getElementById("result8").innerHTML = localStorage.getItem("Photo");
+var photo=document.getElementById("result8").innerHTML = localStorage.getItem("Photo");
+document.querySelector('#img').src=photo;

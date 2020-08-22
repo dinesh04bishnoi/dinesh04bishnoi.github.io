@@ -31,7 +31,7 @@
                 <div class="card-body">
                         <div class="name">
                         <label for="name">User Name <span class="form-required">*</span></label>
-                        <input type="text" id="name" placeholder="Enter your name" class="form-control">
+                        <input type="text" autocapitalize="words" autocomplete="off" oninput="validate('name')" id="name" placeholder="Enter your name" class="form-control">
                         <span id="message" class="text text-danger"></span>
                     </div>
                     <div class="gender">
@@ -46,16 +46,16 @@
 
                     <div class="address">
                         <label for="address">Address</label>
-                        <textarea id="address" rows="4" cols="50" maxlength="150" class="form-control" placeholder="Maximum 150 Character you can enter here..."></textarea>
+                        <textarea id="address" autocapitalize="words" autocomplete="off" rows="4" cols="50" maxlength="150" class="form-control" placeholder="Maximum 150 Character you can enter here..."></textarea>
                     </div>
                     <div class="email">
-                        <label for="email">Email <span class="form-required">*</span></label>
-                        <input type="text" name="email" id="email" class="form-control" placeholder="Enter your email id">
+                        <label for="email" >Email <span class="form-required">*</span></label>
+                        <input type="text"autocomplete="off" oninput="validate('email')" name="email" id="email" class="form-control" placeholder="Enter your email id">
                         <span id="mail" class="text text-danger"></span>
                     </div>
                     <div class="phone">
                         <label for="phone">Phone No. <span class="form-required">*</span></label>
-                        <input type="text" id="phone" value="" class="form-control" placeholder="Enter your phone no.">
+                        <input type="text" autocomplete="off" oninput="validate('mobile')" id="phone" value="" class="form-control" placeholder="Enter your phone no.">
                         <span id="mobileNumber" class="text text-danger"></span>
                     </div>
                     <div class="education">
@@ -72,28 +72,30 @@
                                 <td>
                                     <div class="form-group">
 
-                                        <select class="form-control" id="level">
+                                        <select class="form-control" id="level" onchange="validate('level')">
                                             <option value="">-- Select Level --</option>
                                             <option value="SSC">SSC</option>
                                             <option value="HSSC">HSSC</option>
                                             <option value="Diploma">Diploma</option>
                                             <option value="BE">BE</option>
-                                            <option value="Btch">Btech</option>
+                                            <option value="Btech">Btech</option>
                                             <option value="BCA">BCA</option>
                                             <option value="MCA">MCA</option>
                                         </select>
+                                        <span id="level-error" class="text text-danger "></span>
                                     </div>
 
                                 </td>
                                 <td>
                                     <div class="form-group">
-                                        <input type="number" class="form-control" id="year">
+                                        <input type="number" oninput="validate('year')" class="form-control" id="year">
                                         <span id="error" class="text text-danger "></span>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="grade">
+                                        <input type="text" oninput="validate('grade')" class="form-control" id="grade">
+                                        <span id="grade-error" class="text text-danger "></span>
                                     </div>
                                 </td>
                                 <td><button type="button" class="btn btn-primary" onclick="addEducation()">Add</button>
@@ -115,14 +117,14 @@
                             <tr>
                                 <td>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="skillName">
-                                        <span id="error" class="text text-danger "></span>
+                                        <input type="text" oninput="validate('skill')" class="form-control" id="skillName">
+                                        <span id="skill-error" class="text text-danger "></span>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="form-group">
 
-                                        <select class="form-control" id="rating">
+                                        <select class="form-control" id="rating"  onchange="validate('rating')" >
                                             <option value="">-- Select Rating --</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -135,6 +137,8 @@
                                             <option value="9">9</option>
                                             <option value="10">10</option>
                                         </select>
+                                        <span id="rating-error" class="text text-danger "></span>
+
                                     </div>
 
                                 </td>
@@ -148,13 +152,13 @@
                     <span id="skill-error" class="text text-danger"></span>
                     <div class="hobbies">
                         <label for="hobbies">Hobbies <span class="form-required">*</span></label>
-                        <input type="text" id="hobbies" class="form-control" placeholder="Enter your hobbies">
+                        <input type="text" autocapitalize="words" autocomplete="off" oninput="validate('hobbi')" id="hobbies" class="form-control" placeholder="You can Add multiple hobbies by just using comman seperated value">
                         <span id="hobby" class="text text-danger"></span>
                     </div>
 
                     <div class="photo"></div>
                     <label for="photo">Photo <span class="form-required">*</span></label>
-                    <input type="text" placeholder="Link to your online photo" id="photo" class="form-control">
+                    <input type="text" oninput="validate('photo')" autocomplete="off" placeholder="Link to your online photo" id="photo" class="form-control">
                     <span id="photo-error" class="text text-danger"></span>
 
                     <div class="alert alert-danger" role="alert" id="alert-danger">
@@ -171,5 +175,4 @@
     </form>
 
 </body>
-
-</html>
+666

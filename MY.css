@@ -2,6 +2,9 @@
     --secondary-color: #45969b;
     --primary-color: #f45905;
 }
+#img{
+    width: 100%;
+}
 
 .card {
     margin-top: 7%;
